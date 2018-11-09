@@ -109,7 +109,7 @@
                 
                 {{-- Footer Copyright --}}
                 <div class="col-lg-6 col-12">
-                    <div class="footer-copyright"><p>&copy; Copyright, 2018 All Rights Reserved by <a href="https://freethemescloud.com/">Free themes Cloud</a></p></div>
+                    <div class="footer-copyright"><p>&copy; FashionLarv - 2018. All Rights Reserved | Design by by <a href="https://freethemescloud.com/">Free themes Cloud</a></p></div>
                 </div>
                 
                 {{-- Footer Payment Support --}}

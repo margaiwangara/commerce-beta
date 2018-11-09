@@ -142,104 +142,62 @@
             
                     {{-- Tab Pane Start --}}
                     <div class="tab-pane fade show active" id="tab-one">
-            
-                        {{-- Product Slider Wrap Start --}}
-                        <div class="product-slider-wrap product-slider-arrow-one">
-                            {{-- Product Slider Start --}}
-                            <div class="product-slider product-slider-4">
-                                <div class="col pb-20 pt-10">
-                                    {{-- Product Start --}}
-                                    <div class="ee-product">
-                                        {{-- Image --}}
-                                        <div class="image">
-                                        
-                                            <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="Product Image"></a>
-                                        
-                                            <div class="wishlist-compare">
-                                                <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
-                                                <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
-                                            </div>
-                                        
-                                            <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
-                                        
-                                        </div>
-
-                                        {{-- Content --}}
-                                        <div class="content">
-
-                                            {{-- Category & Title --}}
-                                            <div class="category-title">
-
-                                                <a href="#" class="cat">Laptop</a>
-                                                <h5 class="title"><a href="single-product.html">Zeon Zen 4 Pro</a></h5>
-
-                                            </div>
-
-                                            {{-- Price & Ratting --}}
-                                            <div class="price-ratting">
-
-                                                <h5 class="price">$295.00</h5>
-                                                <div class="ratting">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half-o"></i>
-                                                    <i class="fa fa-star-o"></i>
+                        @if(count($featured) > 0)
+                            {{-- Product Slider Wrap Start --}}
+                            <div class="product-slider-wrap product-slider-arrow-one">
+                                {{-- Product Slider Start --}}
+                                <div class="product-slider product-slider-4">
+                                    @foreach($featured as $product)
+                                        <div class="col pb-20 pt-10">
+                                            {{-- Product Start --}}
+                                            <div class="ee-product">
+                                                {{-- Image --}}
+                                                <div class="image">
+                                                
+                                                    <a href="single-product.html" class="img"><img src="{{ asset('images/products/product-1.png') }}" alt="Product Image"></a>
+                                                
+                                                    <div class="wishlist-compare">
+                                                        <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
+                                                        <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
+                                                    </div>
+                                                
+                                                    <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
+                                                
                                                 </div>
 
-                                            </div>
+                                                {{-- Content --}}
+                                                <div class="content">
 
-                                        </div>
-                                    </div>{{-- Product End--}}
-                                </div>
+                                                    {{-- Category & Title --}}
+                                                    <div class="category-title">
 
-                                <div class="col pb-20 pt-10">
-                                    {{-- Product Start --}}
-                                    <div class="ee-product">
-                                        {{-- Image --}}
-                                        <div class="image">
-                                        
-                                            <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="Product Image"></a>
-                                        
-                                            <div class="wishlist-compare">
-                                                <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
-                                                <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
-                                            </div>
-                                        
-                                            <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
-                                        
-                                        </div>
+                                                        <a href="#" class="cat">{{ $product->category }}</a>
+                                                        <h5 class="title"><a href="single-product.html">{{ $product->name }}</a></h5>
 
-                                        {{-- Content --}}
-                                        <div class="content">
+                                                    </div>
 
-                                            {{-- Category & Title --}}
-                                            <div class="category-title">
+                                                    {{-- Price & Ratting --}}
+                                                    <div class="price-ratting">
 
-                                                <a href="#" class="cat">Laptop</a>
-                                                <h5 class="title"><a href="single-product.html">Zeon Zen 4 Pro</a></h5>
+                                                        <h5 class="price">{{ $product->presentPrice() }}</h5>
+                                                        <div class="ratting">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-half-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </div>
 
-                                            </div>
+                                                    </div>
 
-                                            {{-- Price & Ratting --}}
-                                            <div class="price-ratting">
-
-                                                <h5 class="price">$295.00</h5>
-                                                <div class="ratting">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half-o"></i>
-                                                    <i class="fa fa-star-o"></i>
                                                 </div>
-
-                                            </div>
-
+                                            </div>{{-- Product End--}}
                                         </div>
-                                    </div>{{-- Product End--}}
-                                </div>
-                            </div>{{-- Product Slider End --}}
-                        </div>{{-- Product Slider Wrap End --}}
+                                    @endforeach
+                                
+                                </div>{{-- Product Slider End --}}
+                            </div>{{-- Product Slider Wrap End --}}
+                        @endif
                     </div>{{-- Tab Pane End --}}
 
                     {{-- Tab Pane Start --}}
@@ -366,7 +324,7 @@
                             {{-- Image --}}
                             <div class="image">
                             
-                                <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-5.png') }}" alt="Product Image"></a>
+                                <a href="single-product.html" class="img"><img src="{{ asset('images/products/product-1.png') }}" alt="Product Image"></a>
                             
                                 <div class="wishlist-compare">
                                     <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
@@ -667,55 +625,59 @@
             
             <div class="col-12">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10">
-                        {{-- Product Start --}}
-                        <div class="ee-product">
+                    @forelse($new_arrivals as $products)
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10">
+                            {{-- Product Start --}}
+                            <div class="ee-product">
 
-                            {{-- Image --}}
-                            <div class="image">
+                                {{-- Image --}}
+                                <div class="image">
 
-                                <span class="label new">New</span>
+                                    <span class="label new">New</span>
 
-                                <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-16.png') }}" alt="Product Image"></a>
+                                    <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-16.png') }}" alt="Product Image"></a>
 
-                                <div class="wishlist-compare">
-                                    <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
-                                    <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
-                                </div>
+                                    <div class="wishlist-compare">
+                                        <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
+                                        <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
+                                    </div>
 
-                                <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
-
-                            </div>
-
-                            {{-- Content --}}
-                            <div class="content">
-
-                                {{-- Category & Title --}}
-                                <div class="category-title">
-
-                                    <a href="#" class="cat">Tv & Audio</a>
-                                    <h5 class="title"><a href="single-product.html">Nexo Andriod TV Box</a></h5>
+                                    <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
 
                                 </div>
 
-                                {{-- Price & Ratting --}}
-                                <div class="price-ratting">
+                                {{-- Content --}}
+                                <div class="content">
 
-                                    <h5 class="price"><span class="old">$360 </span>$250.00</h5>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                    {{-- Category & Title --}}
+                                    <div class="category-title">
+
+                                        <a href="#" class="cat">{{ $products->category }}</a>
+                                        <h5 class="title"><a href="single-product.html">{{ $products->name }}</a></h5>
+
+                                    </div>
+
+                                    {{-- Price & Ratting --}}
+                                    <div class="price-ratting">
+
+                                        <h5 class="price"><span class="old">$360 </span>{{ $products->presentPrice() }}</h5>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+
                                     </div>
 
                                 </div>
 
-                            </div>
-
-                        </div>{{-- Product End --}}
-                    </div>
+                            </div>{{-- Product End --}}
+                        </div>
+                    @empty
+                        <p>There are no new products to display</p>
+                    @endforelse
                 </div>
             </div>
         </div>
