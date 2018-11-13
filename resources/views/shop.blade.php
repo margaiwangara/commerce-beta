@@ -3,6 +3,37 @@
 @section('title', 'Shop')
 
 @section('content')
+{{-- Page Banner Section Start --}}
+<div class="page-banner-section section">
+    <div class="page-banner-wrap row row-0 d-flex align-items-center ">
+
+        {{-- Page Banner --}}
+        <div class="col-lg-4 col-12 order-lg-2 d-flex align-items-center justify-content-center">
+            <div class="page-banner">
+                <h1>SHOP Grid VIEW</h1>
+                <p>similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita</p>
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">SHOP Grid VIEW</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{-- Banner --}}
+        <div class="col-lg-4 col-md-6 col-12 order-lg-1">
+            <div class="banner"><a href="#"><img src="{{ asset('images/banner/banner-15.jpg') }}" alt="Banner"></a></div>
+        </div>
+
+        {{-- Banner --}}
+        <div class="col-lg-4 col-md-6 col-12 order-lg-3">
+            <div class="banner"><a href="#"><img src="{{ asset('images/banner/banner-14.jpg') }}" alt="Banner"></a></div>
+        </div>
+
+    </div>
+</div>{{-- Page Banner Section End --}}
+
 {{-- Product Section Start --}}
 <div class="product-section section mt-90 mb-90">
     <div class="container">
@@ -49,7 +80,7 @@
 
                             {{-- Product Pages --}}
                             <div class="product-pages">
-                                <p>Page(s) 1 of 2</p>
+                                <p>Page {{ $products->currentPage() }} of {{ $products->lastPage() }}</p>
                             </div>
 
                         </div>{{-- Shop Top Bar End --}}
@@ -69,7 +100,7 @@
                                 {{-- Image --}}
                                 <div class="image">
 
-                                    <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="Product Image"></a>
+                                    <a href="{{ route('shop.show', $product->id) }}" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="{{ $product->name }}"></a>
 
                                     <div class="wishlist-compare">
                                         <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
@@ -87,7 +118,7 @@
                                     <div class="category-title">
 
                                         <a href="#" class="cat">{{ $product->category }}</a>
-                                        <h5 class="title" style="font-size: 15px;"><a href="single-product.html">{{ $product->name }}</a></h5>
+                                        <h5 class="title" style="font-size: 15px;"><a href="{{ route('shop.show', $product->id) }}">{{ $product->name }}</a></h5>
 
                                     </div>
 
@@ -115,7 +146,7 @@
                                 {{-- Image --}}
                                 <div class="image">
 
-                                    <a href="single-product.html" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="Product Image"></a>
+                                    <a href="{{ route('shop.show', $product->id) }}" class="img"><img src="{{ asset('images/product/product-1.png') }}" alt="Product Image"></a>
 
                                 </div>
 
@@ -127,7 +158,7 @@
 
                                         <div class="category-title">
                                             <a href="#" class="cat">{{ $product->category }}</a>
-                                            <h5 class="title" style="font-size: 15px;"><a href="single-product.html">{{ $product->name }}</a></h5>
+                                            <h5 class="title" style="font-size: 15px;"><a href="{{ route('shop.show', $product->id) }}">{{ $product->name }}</a></h5>
                                         </div>
                                         
                                         <h5 class="price">{{ $product->presentPrice() }}</h5>
@@ -182,10 +213,11 @@
                     
                 </div>{{-- Shop Product Wrap End --}}
                 
+                {{-- Pagination --}}
                 <div class="row mt-30">
                     <div class="col">
                         {{ $products->links() }}
-                        {{--  <ul class="pagination">
+                          {{--  <ul class="pagination">
                             <li><a href="#"><i class="fa fa-angle-left"></i>Back</a></li>
                             <li><a href="#">1</a></li>
                             <li class="active"><a href="#">2</a></li>
@@ -195,10 +227,10 @@
                             <li><a href="#">18</a></li>
                             <li><a href="#">20</a></li>
                             <li><a href="#">Next<i class="fa fa-angle-right"></i></a></li>
-                        </ul>  --}}
+                        </ul>    --}}
                         
                     </div>
-                </div>
+                </div> 
                 
             </div>
             

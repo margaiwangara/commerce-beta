@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Products;
 
-class ShopController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products = Products::orderBy('created_at', 'desc')->paginate(8);
-        
-        return view('shop')->with(['products' => $products]);
+        return view('cart');
     }
 
     /**
@@ -48,12 +45,7 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-        //get products with id
-        $product = Products::find($id);
-        //related products
-        $related = Products::where('id','<>',$product->id)->orderBy('created_at', 'desc')->inRandomOrder()->take(8)->get();
-        
-        return view('product')->with(['product' => $product, 'related' => $related]);
+        //
     }
 
     /**

@@ -2388,8 +2388,8 @@ img.mfp-img {
     flex: 1 0 33.3333%;
     max-width: 33.3333%; } }
 
-/*-- Pagination --*/
-.pagination {
+/*-- pagination-style --*/
+.pagination-style {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2398,10 +2398,10 @@ img.mfp-img {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-  .pagination li {
+  .pagination-style li {
     margin: 5px;
     color: #a3a3a3; }
-    .pagination li a {
+    .pagination-style li a {
       font-size: 14px;
       line-height: 24px;
       font-weight: 600;
@@ -2412,27 +2412,27 @@ img.mfp-img {
       line-height: 28px;
       border: 1px solid transparent;
       border-radius: 50px; }
-      .pagination li a i {
+      .pagination-style li a i {
         display: block;
         line-height: 24px; }
-    .pagination li.active a {
+    .pagination-style li.active a {
       border-color: #444444;
       color: #202020;
       font-weight: 700; }
-    .pagination li:first-child {
+    .pagination-style li:first-child {
       margin-right: 20px; }
-      .pagination li:first-child a {
+      .pagination-style li:first-child a {
         color: #202020;
         width: 50px; }
-        .pagination li:first-child a i {
+        .pagination-style li:first-child a i {
           float: left;
           margin-right: 10px; }
-    .pagination li:last-child {
+    .pagination-style li:last-child {
       margin-left: 20px; }
-      .pagination li:last-child a {
+      .pagination-style li:last-child a {
         width: 50px;
         color: #202020; }
-        .pagination li:last-child a i {
+        .pagination-style li:last-child a i {
           float: right;
           margin-left: 10px; }
 

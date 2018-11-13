@@ -67,8 +67,8 @@
                     <div class="main-menu">
                         <nav>
                             <ul>
-                                <li class="active"><a href="index.html">HOME</a></li>
-                                <li class="menu-item-has-children"><a href="shop-grid.html">Shop</a>
+                                <li class="active"><a href="{{ route('home.index') }}">HOME</a></li>
+                                <li class="menu-item-has-children"><a href="{{ route('shop.index') }}">Shop</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item-has-children"><a href="shop-grid.html">shop grid</a>
                                             <ul class="sub-menu">
@@ -143,39 +143,5 @@
             </div>
         </div>
     </div>{{-- Header Bottom End --}}
-
-    {{-- Header Category Start --}}
-    <div class="header-category-section">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    
-                    {{-- Header Category --}}
-                    <div class="header-category">
-                        
-                        {{-- Category Toggle Wrap --}}
-                        <div class="category-toggle-wrap d-block d-lg-none">
-                            {{-- Category Toggle --}}
-                            <button class="category-toggle">Categories <i class="ti-menu"></i></button>
-                        </div>
-                        
-                        {{-- Category Menu --}}
-                        <nav class="category-menu">
-                            <ul>
-                                <li><a href="category-1.html">Tv & Audio System</a></li>
-                                <li><a href="category-2.html">Computer & Laptop</a></li>
-                                <li><a href="category-3.html">Phones & Tablets</a></li>
-                                <li><a href="category-1.html">Home Appliances</a></li>
-                                <li><a href="category-2.html">Kitchen appliances</a></li>
-                                <li><a href="category-3.html">Accessories</a></li>
-                            </ul>
-                        </nav>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>{{-- Header Category End --}}
 
 </div>{{-- Header Section End --}}

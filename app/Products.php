@@ -22,4 +22,10 @@ class Products extends Model
     public function attributes(){
         return $this->hasMany(ProductsAndAttributes::class, 'prod_id');
     }
+
+    public function reviews(){
+        return $this->hasMany(ProductReviews::class, 'prod_id');
+    }
+
+    
 }

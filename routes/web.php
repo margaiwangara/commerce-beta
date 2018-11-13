@@ -17,7 +17,10 @@ Route::get('/', function () {
 */
 
 //Index Page
-Route::get('/', 'IndexPageController@index');
+Route::get('/', 'IndexPageController@index')->name('home.index');
 
 //Products Page
-Route::get('/shop', 'ShopController@index');
+Route::resource('shop', 'ShopController');
+
+//cart
+Route::get('/cart', 'CartController@index');

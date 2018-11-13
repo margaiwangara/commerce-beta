@@ -90,9 +90,24 @@
                 <div class="col-lg-3 col-md-6 col-12 mb-40">
                     <div class="footer-widget">
                        
-                        <h4 class="widget-title">LATEST TWEET</h4>
+                        <h4 class="widget-title">LATEST FASHION NEWS</h4>
                         
-                        <div class="footer-tweet"></div>
+                        <div class="sidebar-blog p-2">
+                            <a href="#" class="image"><img src="{{ asset('images/blog/sidebar-blog-1.jpg') }}" alt="Sidebar Blog"></a>
+                            <div class="content">
+                                <h5><a href="#">PS4 Play Station for playing games</a></h5>
+                                <span>30 January 2018</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-blog p-2">
+                            <a href="#" class="image"><img src="{{ asset('images/blog/sidebar-blog-1.jpg') }}" alt="Sidebar Blog"></a>
+                            <div class="content">
+                                <h5><a href="#">PS4 Play Station for playing games</a></h5>
+                                <span>30 January 2018</span>
+                            </div>
+                        </div>
+                        
                         
                     </div>
                 </div>{{-- Footer Widget End --}}
