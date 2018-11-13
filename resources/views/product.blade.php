@@ -369,10 +369,9 @@
                                             <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
                                         </div>
                                         <form action="#" method="POST">
-                                            {{ csrf_token() }}
-                                            <button class="add-to-cart" type="submit">
+                                            <a href= "#" class="add-to-cart">
                                                 <i class="ti-shopping-cart"></i><span>ADD TO CART</span>
-                                            </button>
+                                            </a>
                                         </form>
                                     </div>
 
